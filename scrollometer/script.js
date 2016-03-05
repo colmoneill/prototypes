@@ -14,7 +14,15 @@ document.addEventListener("DOMContentLoaded", function(){
     vertPos = window.scrollY;
     console.log("vertical scroll position", vertPos);
     var distInCm = pxToMeters(vertPos);
-    div.innerHTML = "You've scrolled " + distInCm + " Centimeters!"
+    div.innerHTML = "You've scrolled " + distInCm + " Centimeters! aka:" + vertPos + "px"
   })
+
+  //oral note: comare prev pos and current pos, in abs() for counting both ways 
+
+  // look at the current vertPos, ?? in sequence ??, and add the difference of the biggest value to the current value
+  var distanceCalculator = window.addEventListener("scroll", function(){
+    for
+  })
+
 
 })
