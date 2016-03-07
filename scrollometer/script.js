@@ -1,7 +1,12 @@
 document.addEventListener("DOMContentLoaded", function(){
   console.log("ready")
   var initVertPos = window.scrollY,
-    initHorizPos = window.scrollX;
+      initHorizPos = window.scrollX,
+      myWidth = window.innerWidth,
+      fullHeight = window.innerHeight,
+      previousPos = 0,
+      cumulativeDist = 0,
+
 
   function pxToMeters(distance){
     return (distance * 0.02645833333333);
@@ -10,19 +15,17 @@ document.addEventListener("DOMContentLoaded", function(){
   var div = document.createElement("div")
   document.body.appendChild(div)
   div.style.position = "fixed"
+  div.style.top = "0"
+
   var v = window.addEventListener("scroll", function(){
-    vertPos = window.scrollY;
-    console.log("vertical scroll position", vertPos);
-    var distInCm = pxToMeters(vertPos);
-    div.innerHTML = "You've scrolled " + distInCm + " Centimeters! aka:" + vertPos + "px"
+    var currentPos = window.scrollY;
+    var delta = (currentPos - previousPos);
+    cumulativeDist = cumulativeDist + Math.abs(delta);
+    console.log("current position:" + currentPos + " previous position:" + previousPos + " cumulative distance:" + cumulativeDist);
+    //console.log("vertical scroll position", vertPos);
+    //var distInCm = pxToMeters(vertPos);
+    div.innerHTML = "You've scrolled " + cumulativeDist;
+    previousPos = currentPos;
   })
-
-  //oral note: comare prev pos and current pos, in abs() for counting both ways 
-
-  // look at the current vertPos, ?? in sequence ??, and add the difference of the biggest value to the current value
-  var distanceCalculator = window.addEventListener("scroll", function(){
-    for
-  })
-
 
 })
