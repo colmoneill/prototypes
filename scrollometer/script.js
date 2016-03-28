@@ -32,7 +32,15 @@ function getPPI(){
   var div = document.createElement("div")
   document.body.appendChild(div)
   div.style.position = "fixed"
+  div.style.
   div.style.top = "0"
+  div.style.width = "300px"
+  div.style.margin = "0 100 200 300"
+  div.style.border = "1px dotted grey"
+  //div.style."border-radius" = "10px"
+  div.style.background = "lightblue"
+  div.style.padding = "20px"
+
 
   var v = window.addEventListener("scroll", function(){
     var currentPos = window.scrollY;
@@ -44,7 +52,7 @@ function getPPI(){
     div.innerHTML = "<br>This page offers" + fullHeight + " px of potential or " + pxToMeters(fullHeight)  + " cm <br><br> Your device pixel ratio is " + devicePixelRatio + " <br><br> and You've scrolled " + cumulativeDist + " px or " + pxToMeters(cumulativeDist) + " cm";
     previousPos = currentPos;
   })
-
+})
 var isDragging=false;
 var DDX=0;
 var DSV=0;
@@ -64,15 +72,3 @@ function handleMouseMove(e){
     drawAdjuster();
   }
 }
-
-var c=document.getElementById("ruler");
-c.addEventListener("mousedown", handleMouseDown);
-c.addEventListener("mouseup", handleMouseUp);
-c.addEventListener("mouseout", handleMouseOut);
-c.addEventListener("mousemove", handleMouseMove);
-var rulers= ["","A4 Paper (portrait)","A4 Paper (landscape)",
-"US One Dollar Bill (long)","US One Dollar Bill (width)","20 EURO Note (long)",
-"Standard CD Diameter"];
-var rulers_inch= [0,8.264,11.681,6.14,2.61,5.236,4.724];
-
-})
