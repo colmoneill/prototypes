@@ -31,15 +31,7 @@ function getPPI(){
 
   var div = document.createElement("div")
   document.body.appendChild(div)
-  div.style.position = "fixed"
-  div.style.
-  div.style.top = "0"
-  div.style.width = "300px"
-  div.style.margin = "0 100 200 300"
-  div.style.border = "1px dotted grey"
-  //div.style."border-radius" = "10px"
-  div.style.background = "lightblue"
-  div.style.padding = "20px"
+  div.className = "bubble"
 
 
   var v = window.addEventListener("scroll", function(){
@@ -49,7 +41,7 @@ function getPPI(){
     console.log("current position:" + currentPos + " previous position:" + previousPos + " cumulative distance:" + cumulativeDist);
     //console.log("vertical scroll position", vertPos);
     //var distInCm = pxToMeters(vertPos);
-    div.innerHTML = "<br>This page offers" + fullHeight + " px of potential or " + pxToMeters(fullHeight)  + " cm <br><br> Your device pixel ratio is " + devicePixelRatio + " <br><br> and You've scrolled " + cumulativeDist + " px or " + pxToMeters(cumulativeDist) + " cm";
+    div.innerHTML = "This page offers <code>" + fullHeight + " px</code> of potential or " + pxToMeters(fullHeight)  + " cm <br><br> Your device pixel ratio is " + devicePixelRatio + " <br><br> and You've scrolled " + cumulativeDist + " px or " + pxToMeters(cumulativeDist) + " cm";
     previousPos = currentPos;
   })
 })
