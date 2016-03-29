@@ -28,10 +28,11 @@ function getPPI(){
  // and return the value
  return parseFloat(ppi);
 }
-
+  var newStyle = document.createStyleSheet("https://raw.githubusercontent.com/colmoneill/prototypes/master/scrollometer/styles.css",0)
   var div = document.createElement("div")
   document.body.appendChild(div)
   div.className = "bubble"
+  div.style.position = "fixed";
 
 
   var v = window.addEventListener("scroll", function(){
@@ -45,22 +46,3 @@ function getPPI(){
     previousPos = currentPos;
   })
 })
-var isDragging=false;
-var DDX=0;
-var DSV=0;
-function handleMouseDown(e){
-  if(document.getElementById("adjuster").value!=''){
-    isDragging=true;DDX=e.clientX;
-    DSV=document.getElementById("ppi").value;
-    }
-  }
-function handleMouseUp(e){isDragging=false;}
-function handleMouseOut(e){isDragging=false;}
-function handleMouseMove(e){
-  if((isDragging)&&(document.getElementById("adjuster").value!='')){
-    var MouseX=parseInt(e.clientX-DDX);
-    document.getElementById("ppi").value=parseFloat(DSV)+MouseX/10;
-    drawruler();
-    drawAdjuster();
-  }
-}
