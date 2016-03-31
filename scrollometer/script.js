@@ -6,43 +6,33 @@ document.addEventListener("DOMContentLoaded", function(){
       fullHeight = window.innerHeight,
       devicePixelRatio = window.devicePixelRatio,
       previousPos = 0,
-      cumulativeDist = 0;
-
+      cumulativeDist = 0,
+      prevCumulativeDist = localStorage.prevCumulativeDist;
 
   function pxToMeters(distance){
     return (distance * 0.02645833333333);
   }
 
-function getPPI(){
- // create an empty element
- var div = document.createElement("div");
- // give it an absolute size of one inch
- div.style.width="1in";
- // append it to the body
- var body = document.getElementsByTagName("body")[0];
- body.appendChild(div);
- // read the computed width
- var ppi = document.defaultView.getComputedStyle(div, null).getPropertyValue('width');
- // remove it again
- body.removeChild(div);
- // and return the value
- return parseFloat(ppi);
-}
-  var newStyle = document.createStyleSheet("https://raw.githubusercontent.com/colmoneill/prototypes/master/scrollometer/styles.css",0)
+  //document.head.insertAdjacentHTML( 'beforeend', '<link rel=stylesheet href="http://pzwart1.wdka.hro.nl/~colm/prototypes/scrollometer/bubble-styles.css">' );
+  ///home/colm/ownCloud/PZI/Litteracy-as-a-dependency/prototypes/scrollometer/bubble-styles.css
+
   var div = document.createElement("div")
   document.body.appendChild(div)
   div.className = "bubble"
   div.style.position = "fixed";
+  div.setAttribute("style", "font-family: monospace; position: fixed; top: 10; width: 300px; right: 10; background-color: lightblue; padding: 20px; border-radius: 5px;")
+  div.innerHTML = "This page offers <code>" + fullHeight + " px</code> of potential or " + pxToMeters(fullHeight)*devicePixelRatio  + " cm <br><br> Your device pixel ratio is " + devicePixelRatio + " <br><br> and You've scrolled " + prevCumulativeDist + " px or " + pxToMeters(prevCumulativeDist) + " cm";
 
 
   var v = window.addEventListener("scroll", function(){
     var currentPos = window.scrollY;
     var delta = (currentPos - previousPos);
+    cumulativeDist = parseInt(prevCumulativeDist);
     cumulativeDist = cumulativeDist + Math.abs(delta);
-    console.log("current position:" + currentPos + " previous position:" + previousPos + " cumulative distance:" + cumulativeDist);
-    //console.log("vertical scroll position", vertPos);
-    //var distInCm = pxToMeters(vertPos);
-    div.innerHTML = "This page offers <code>" + fullHeight + " px</code> of potential or " + pxToMeters(fullHeight)  + " cm <br><br> Your device pixel ratio is " + devicePixelRatio + " <br><br> and You've scrolled " + cumulativeDist + " px or " + pxToMeters(cumulativeDist) + " cm";
+    div.innerHTML = "This page offers <code>" + fullHeight + " px</code> of potential or " + pxToMeters(fullHeight)*devicePixelRatio  + " cm <br><br> Your device pixel ratio is " + devicePixelRatio + " <br><br> and You've scrolled " + cumulativeDist + " px or " + pxToMeters(cumulativeDist) + " cm";
     previousPos = currentPos;
+    prevCumulativeDist = cumulativeDist;
+    console.log(cumulativeDist, prevCumulativeDist);
+    localStorage.prevCumulativeDist = prevCumulativeDist;
   })
 })
