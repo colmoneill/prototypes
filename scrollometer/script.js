@@ -25,27 +25,57 @@ document.addEventListener("DOMContentLoaded", function(){
     console.log("no previous cumulative distance found, starting from 0");
   }
 
-  function pxToMeters(distance){
-    return (distance * 0.02645833333333);
+  function pxToCm(distance){
+    return (distance * 0.0264);
   }
 
-  var div = document.createElement("div")
-  document.body.appendChild(div)
-  div.className = "bubble"
-  console.log("created bubble div")
-  div.setAttribute("style", "font-family: monospace; position: fixed; top: 10px !important; width: 300px; right: 10px !important; background-color: lightblue; padding: 20px; border-radius: 5px;")
-  div.innerHTML = "This page offers <code>" + fullHeight + " px</code> of potential or " + pxToMeters(fullHeight)*devicePixelRatio  + " cm <br><br> Your device pixel ratio is " + devicePixelRatio + " <br><br> and You've scrolled " + prevCumulativeDist + " px or " + pxToMeters(prevCumulativeDist) + " cm <br> on " + window.location.host;
+  function pxToM(distance){
+    return (distance * 0.000264);
+  }
 
-  var v = window.addEventListener("scroll", function(){
+  var bigdiv = document.createElement("div")
+  document.body.appendChild(bigdiv)
+  bigdiv.className = "big-bubble"
+  bigdiv.id = "big-bubble"
+  bigdiv.setAttribute("style", "opacity: 0;font-family: monospace; position: fixed; top: 10px !important; width: 300px; right: 10px !important; background-color: lightblue; padding: 20px; border-radius: 5px;")
+  bigdiv.innerHTML = "This page offers <code>" + fullHeight + " px</code> of potential or " + pxToCm(fullHeight)*devicePixelRatio  + " cm <br><br> Your device pixel ratio is " + devicePixelRatio + " <br><br> and You've scrolled " + cumulativeDist + " px or " + pxToM(cumulativeDist) + " meters! <br> on <code>" + window.location.host + "</code>";
+
+  var smalldiv = document.createElement("div")
+  document.body.appendChild(smalldiv)
+  smalldiv.className = "small-bubble"
+  smalldiv.id = "small-bubble"
+  smalldiv.setAttribute("style", "opacity: 1; font-family: monospace; position: fixed; top: 10px !important; width: 200px; right: 10px !important; background-color: lightblue; padding: 10px; border-radius: 5px;")
+  smalldiv.innerHTML = "Distance: " + pxToM(cumulativeDist) + " m";
+
+  var scrollListener = window.addEventListener("scroll", function(){
     //console.log("prevCumulativeDist at start of event listener " + prevCumulativeDist);
     var currentPos = window.scrollY;
     var delta = (currentPos - previousPos);
     cumulativeDist = prevCumulativeDist;
     cumulativeDist = cumulativeDist + Math.abs(delta);
-    div.innerHTML = "This page offers <code>" + fullHeight + " px</code> of potential or " + pxToMeters(fullHeight)*devicePixelRatio  + " cm <br><br> Your device pixel ratio is " + devicePixelRatio + " <br><br> and You've scrolled " + cumulativeDist + " px or " + pxToMeters(cumulativeDist) + " cm <br> on <code>" + window.location.host + "</code>";
+    smalldiv.innerHTML = "Distance: " + pxToM(cumulativeDist) + " m";
+    bigdiv.innerHTML = "This page offers <code>" + fullHeight + " px</code> of potential or " + pxToCm(fullHeight)*devicePixelRatio  + " cm <br><br> Your device pixel ratio is " + devicePixelRatio + " <br><br> and You've scrolled " + cumulativeDist + " px or " + pxToM(cumulativeDist) + " meters! <br> on <code>" + window.location.host + "</code>";
     previousPos = currentPos;
     prevCumulativeDist = cumulativeDist;
     localStorage.prevCumulativeDist = [parseInt(prevCumulativeDist, 10) , datetime ];
     //console.log("prevCumulativeDist at END of event listener " + prevCumulativeDist);
+  });
+
+  var smallerdiv = document.getElementById("small-bubble");
+  var biggerdiv = document.getElementById("big-bubble");
+
+  smallerdiv.addEventListener("mouseover", function(){
+    smalldiv.setAttribute("style", "opacity: 0; font-family: monospace; position: fixed; top: 10px !important; width: 200px; right: 10px !important; background-color: lightblue; padding: 10px; border-radius: 5px;")
+    bigdiv.setAttribute("style", "opacity: 1;font-family: monospace; position: fixed; top: 10px !important; width: 300px; right: 10px !important; background-color: lightblue; padding: 20px; border-radius: 5px;")
+  })
+  smallerdiv.addEventListener("mouseleave", function(){
+    smalldiv.setAttribute("style", "opacity: 1; font-family: monospace; position: fixed; top: 10px !important; width: 200px; right: 10px !important; background-color: lightblue; padding: 10px; border-radius: 5px;")
+    bigdiv.setAttribute("style", "opacity: 0;font-family: monospace; position: fixed; top: 10px !important; width: 300px; right: 10px !important; background-color: lightblue; padding: 20px; border-radius: 5px;")
+  })
+  biggerdiv.addEventListener("mouseover", function(){
+    bigdiv.setAttribute("style", "opacity: 1;font-family: monospace; position: fixed; top: 10px !important; width: 300px; right: 10px !important; background-color: lightblue; padding: 20px; border-radius: 5px;")
+  })
+  biggerdiv.addEventListener("mouseleave", function(){
+    bigdiv.setAttribute("style", "opacity: 0;font-family: monospace; position: fixed; top: 10px !important; width: 300px; right: 10px !important; background-color: lightblue; padding: 20px; border-radius: 5px;")
   })
 })
