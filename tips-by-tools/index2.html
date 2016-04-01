@@ -2,28 +2,11 @@
   <head>
   <title></title>
   <meta charset="utf-8">
-  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
-  <script
-			  src="http://code.jquery.com/jquery-1.12.2.js"
-			  integrity="sha256-VUCyr0ZXB5VhBibo2DkTVhdspjmxUgxDGaLQx7qb7xY="
-			  crossorigin="anonymous"></script>
-  <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
-  <script src="script.js"></script>
+  <link rel="stylesheet" href="styles2.css">
   </head>
   <body>
-  <a href="#" data-toggle="tooltip" title="Some tooltip text!">Hover over me</a>
-  <div class="tooltip top" role="tooltip">
-    <div class="tooltip-arrow"></div>
-    <div class="tooltip-inner">
-    Some tooltip text!
-    </div>
-  </div>
-  <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="left" title="Tooltip on left">Tooltip on left</button>
-
-<button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Tooltip on top</button>
-
-<button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Tooltip on bottom">Tooltip on bottom</button>
-
-<button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="right" title="Tooltip on right">Tooltip on right</button>
+  <a href="#" data-toggle="tooltip1" data-placement="right" title="first bunch" data-toggle="tooltip2" data-placement="right" subtitle="second bunch">Hover over me</a>
+  <p id="text">Lorem ipsum dolor sit amet, <span class="hotspot" onmouseover="tooltip.show('Testing 123 <strong>Testing 123</strong>');" onmouseout="tooltip.hide();">consectetuer adipiscing</span> elit. Aliquam id tellus. Nulla orci enim, vulputate et, pharetra eget, imperdiet non, sem. Mauris sit amet mi nec nulla porttitor dapibus. Curabitur leo sem, lacinia sed, commodo eu, mattis sit amet, felis. Ut tortor. Donec <span class="hotspot" onmouseover="tooltip.show('Testing 123<br />Testing 123');" onmouseout="tooltip.hide();">porttitor orci</span> et neque. Curabitur eget diam at libero egestas suscipit. In tortor est, ullamcorper eu, dapibus et, condimentum nec, nunc. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Duis vel <span class="hotspot" onmouseover="tooltip.show('<img src=\'images/x_icon.gif\'/>');" onmouseout="tooltip.hide();">purus eget diam</span> aliquam luctus. Nullam risus ipsum, aliquam et, lacinia sit amet, fermentum vel, mi. In hac habitasse platea dictumst. Maecenas et dui non tortor lobortis feugiat. Donec eleifend iaculis arcu. Cras vitae leo nec nunc rhoncus laoreet. Integer eget enim. Nunc <span class="hotspot" onmouseover="tooltip.show('<strong>Lorem ipsum dolor sit amet</strong><br />Consectetuer adipiscing elit. Praesent lacinia, dui ut consequat bibendum, lorem dolor tristique tellus, at faucibus nibh est in orci. In pede.');" onmouseout="tooltip.hide();">dignissim cursus</span> mi. Donec eros.</p>
   </body>
+  <script src="script.js"></script>
 </html>
