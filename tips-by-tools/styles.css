@@ -1,65 +1,75 @@
 body{
+  margin-top: 100px;
+  margin-left: 30px;
   font-family: monospace;
-  width: 50%;
-  margin: 0 auto;
-  margin-bottom: 200px;
 }
 
-
-
-p{
-  font-size: 18px;
-  line-height: 26px;
-}
-
-h1{
-  font-size: 36px;
-}
-
-h2{
-  font-size: 24px;
-  border-top: 3px dotted grey;
-  border-bottom: 3px dotted grey;
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
-
-h3{
-
-}
-
-h4{
-  width: 30%;
-  font-size: 18px;
+/* Tooltip container */
+.tooltip {
+  position: relative;
+  display: inline-block;
   border-bottom: 1px dotted black;
-  padding-bottom: 20px;
-  padding-top: 20px;
 }
 
-.tooltip{
-    display: inline;
-    position: relative;
+.tooltiptext {
+  /* Tooltip text */
+  position: absolute;
+  z-index: 1;
+  visibility: hidden;
+  width: auto;
+  background-color: lightgrey;
+  color: black;
+  padding: 5px;
+  border-radius: 3px;
+  min-height: 200%;
 }
 
-.tooltip:hover:after{
-    background: #333;
-    background: rgba(0,0,0,.8);
-    border-radius: 5px;
-    bottom: 26px;
-    color: #fff;
-    content: attr(title);
-    left: -20%;
-    padding: 5px 15px;
-    position: absolute;
-    z-index: 98;
-    width: 220px;
+.tooltiptext1 {
+  bottom: 500%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 1s;
+}
+.tooltiptext2 {
+  bottom: 250%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 5s;
+  transition-timing-function: ease-in;
 }
 
-.tooltip:hover:before{
-    top: 50px;
-    content: "More content?";
-    position: absolute;
-    z-index: 99;
-    border: 1px dotted grey;
-    padding: 6px;
+/* Tooltip arrow */
+.tooltip .tooltiptext1::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: lightgrey transparent transparent transparent;
+}
+
+.tooltip .tooltiptext2::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: lightgrey transparent transparent transparent;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext1 {
+  visibility: visible;
+  opacity: 1;
+}
+
+.tooltip:hover .tooltiptext2 {
+  visibility: visible;
+  opacity: 1;
 }

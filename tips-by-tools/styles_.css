@@ -1,0 +1,65 @@
+body{
+  font-family: monospace;
+  width: 50%;
+  margin: 0 auto;
+  margin-bottom: 200px;
+}
+
+
+
+p{
+  font-size: 18px;
+  line-height: 26px;
+}
+
+h1{
+  font-size: 36px;
+}
+
+h2{
+  font-size: 24px;
+  border-top: 3px dotted grey;
+  border-bottom: 3px dotted grey;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+h3{
+
+}
+
+h4{
+  width: 30%;
+  font-size: 18px;
+  border-bottom: 1px dotted black;
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+
+.tooltip{
+    display: inline;
+    position: relative;
+}
+
+.tooltip:hover:after{
+    background: #333;
+    background: rgba(0,0,0,.8);
+    border-radius: 5px;
+    bottom: 26px;
+    color: #fff;
+    content: attr(title);
+    left: -20%;
+    padding: 5px 15px;
+    position: absolute;
+    z-index: 98;
+    width: 220px;
+}
+
+.tooltip:hover:before{
+    top: 50px;
+    content: "More content?";
+    position: absolute;
+    z-index: 99;
+    border: 1px dotted grey;
+    padding: 6px;
+}
