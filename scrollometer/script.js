@@ -68,14 +68,8 @@ document.addEventListener("DOMContentLoaded", function(){
     smalldiv.setAttribute("style", "opacity: 0; font-family: monospace; position: fixed; top: 10px !important; width: 200px; right: 10px !important; background-color: lightblue; padding: 10px; border-radius: 5px;")
     bigdiv.setAttribute("style", "opacity: 1;font-family: monospace; position: fixed; top: 10px !important; width: 300px; right: 10px !important; background-color: lightblue; padding: 20px; border-radius: 5px;")
   })
-  smallerdiv.addEventListener("mouseleave", function(){
-    smalldiv.setAttribute("style", "opacity: 1; font-family: monospace; position: fixed; top: 10px !important; width: 200px; right: 10px !important; background-color: lightblue; padding: 10px; border-radius: 5px;")
-    bigdiv.setAttribute("style", "opacity: 0;font-family: monospace; position: fixed; top: 10px !important; width: 300px; right: 10px !important; background-color: lightblue; padding: 20px; border-radius: 5px;")
-  })
-  biggerdiv.addEventListener("mouseover", function(){
-    bigdiv.setAttribute("style", "opacity: 1;font-family: monospace; position: fixed; top: 10px !important; width: 300px; right: 10px !important; background-color: lightblue; padding: 20px; border-radius: 5px;")
-  })
   biggerdiv.addEventListener("mouseleave", function(){
+    smalldiv.setAttribute("style", "opacity: 1; font-family: monospace; position: fixed; top: 10px !important; width: 200px; right: 10px !important; background-color: lightblue; padding: 10px; border-radius: 5px;")
     bigdiv.setAttribute("style", "opacity: 0;font-family: monospace; position: fixed; top: 10px !important; width: 300px; right: 10px !important; background-color: lightblue; padding: 20px; border-radius: 5px;")
   })
 })
