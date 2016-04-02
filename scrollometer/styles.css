@@ -1,6 +1,55 @@
 body {
   height: 200%;
+  font-family: monospace;
 }
+
+div#mainbody{
+  width: 80%;
+  margin: 0 auto;
+}
+
+div#mainbody p{
+  width: 60%;
+}
+
+canvas#ruler{
+  margin-left: -10%;
+}
+
+h2{
+  width: 60%;
+  padding-bottom: 5px;
+  border-bottom: 1px dotted grey;
+}
+
+div.inch-tester{
+  width: 1in;
+  border-bottom: 1px solid black;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+div.inch-tester::after{
+  content: 'one inch?';
+}
+div.pixel-tester{
+  width: 1px;
+  border-bottom: 1px solid black;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+div.pixel-tester::after{
+  content: 'one pixel?';
+}
+div.cm-tester{
+  width: 1cm;
+  border-bottom: 1px solid black;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+div.cm-tester::before{
+  content: 'one cm?';
+}
+
 
 div#resize{
   position: absolute;
@@ -11,19 +60,4 @@ div#resize{
   border: 1px solid black;
   height: 100px;
   overflow: hidden;
-}
-
-div#content{
-  position: fixed;
-}
-
-div.bubble{
-  font-family: monospace;
-  position: fixed;
-  top: 10;
-  width: 300px;
-  right: 10;
-  background-color: lightblue;
-  padding: 20px;
-  border-radius: 5px;
 }
