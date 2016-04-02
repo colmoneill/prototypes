@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", function(){
       previousPos = 0,
       cumulativeDist = 0,
       prevCumulativeDist = 0,
+      default_ppi = 96,
       currentdate = new Date(),
       datetime = "Last entry: " + currentdate.getDate() + "/"
                 + (currentdate.getMonth()+1)  + "/"
@@ -25,6 +26,15 @@ document.addEventListener("DOMContentLoaded", function(){
     console.log("no previous cumulative distance found, starting from 0");
   }
 
+  if (localStorage.pixels_per_inch){
+    console.log("got calibrated PPI value, using it");
+    var pixels_per_inch = localStorage.pixels_per_inch
+  }
+  else {
+    console.log("No available PPI value, using default");
+    var pixels_per_inch = default_ppi
+  }
+
   function pxToCm(distance){
     return (distance * 0.0264);
   }
@@ -38,7 +48,7 @@ document.addEventListener("DOMContentLoaded", function(){
   bigdiv.className = "big-bubble"
   bigdiv.id = "big-bubble"
   bigdiv.setAttribute("style", "opacity: 0; z-index: 9999; font-family: monospace; position: fixed; top: 10px !important; width: 300px; right: 10px !important; background-color: lightblue; padding: 20px; border-radius: 5px;")
-  bigdiv.innerHTML = "This page offers <code>" + fullHeight + " px</code> of potential or " + pxToCm(fullHeight)*devicePixelRatio  + " cm <br><br> Your device pixel ratio is " + devicePixelRatio + " <br><br> and You've scrolled " + cumulativeDist + " px or " + pxToM(cumulativeDist) + " meters! <br> on <code>" + window.location.host + "</code>";
+  bigdiv.innerHTML = "This page offers <code>" + fullHeight + " px</code> of potential or " + pxToCm(fullHeight)*devicePixelRatio  + " cm <br><br> Your device pixel ratio is " + devicePixelRatio + "<br><br>You have a set PPI of " + pixels_per_inch + " <br><br> and You've scrolled " + cumulativeDist + " px or " + pxToM(cumulativeDist) + " meters! <br> on <code>" + window.location.host + "</code>";
 
   var smalldiv = document.createElement("div")
   document.body.appendChild(smalldiv)
