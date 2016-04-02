@@ -1,31 +1,73 @@
-<meta charset="utf-8">
-<link rel="stylesheet" href="debug-styles.css">
-<script src="script.js"></script>
-<body>
-<!--
-<canvas id="ruler" width="680" height="130" style="border:1px solid #838383;">
-Your browser does not support the canvas element.
-</canvas>
-
-  to convert from pixels to cm we could use a value like <span id="ppm">0.234</span>
-
-<div class="inch-tester"></div>
-<div class="pixel-tester"></div>
-<div class="cm-tester"></div>
--->
-</body>
-
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8" />
-<title>Actual Size Ruler Online - mm,cm,inch</title>
-<meta NAME="KEYWORDS" CONTENT="Actual Size Ruler">
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<script type="text/javascript" src="js/general.js"></script>
+  <head>
+    <meta charset="utf-8">
+    <meta NAME="KEYWORDS" CONTENT="Actual Size Ruler">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Scroll meter prototype - mm,cm,inch</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+  </head>
 
-</head>
-<body>
+  <body>
+  <div id="mainbody">
+  <h1>Scroll-meter prototype homepage</h1>
+
+  <p><b>Scrolling is an achievement! Be proud of your metrics!</b><br>
+  How can we grasp physical world units on screens? How can I print a centimeter on the screen. How can I make sure the centimeter will remain a centimeter across all types of screens?</p>
+
+  <p>We know screens are just grids of pixels, but what is less easy is to find out how many pixels are on the panel. If you know the physical measurements of the screen, and the screen resolution in pixels, then we can work out the pixel density. Reminiscents of the print world call this number PPI, points per inch, in this case pixels per inch, effectively the same notion.</p>
+
+  <h2>pixels per inch</h2>
+  <p>If we know a screen's PPI, (in my case I'll rather a PP-centimeter) we can make rules to draw and display real centimeters. Keep in mind that this won't ever be perfectly precise, grids of pixels in pannels don't constrain to a rhythmical finish, and we can't exactly turn halfs or quarter pixels on or off.</p>
+
+  <p>use case: my personal laptop screen. My laptop has a 'wide screen' (13.6"x7.6"),
+  and resolution is 1366x768 pixels, 1366 / 13.6 = 100.44 PPI. Granted, you could also simply search for your exact device online and discover your PPI this way</p>
+
+  <h2>theoretical usage</h2>
+  <p>So the rule would look like this
+  <ul>
+    <li>in a css preprocessor variable definition sheet :<br>
+    <code>
+    var ppi = 100.44;<br>
+    var ppcm = (ppi * 2.54 /* 1 cm = 2.54 in */);<br>
+    var realcm = ppcm<br>
+    </code>
+    <br>then in use :<br>
+    <code>
+      div.tenCm{<br>
+        width: (10*realcm) px;<br>
+      }<br>
+    </code>
+    </li>
+  </ul>
+  </p>
+
+  <h2>devicePixelRatio</h2>
+  <h3>vocabulary</h3>
+  <p>notions that need defining: <br>
+  <ul>
+    <li>physical pixels</li>
+    <li>dips, device independent pixels</li>
+    <li>device pixel Ratio</li>
+  </ul>
+  references:<br>
+  http://www.quirksmode.org/blog/archives/2012/06/devicepixelrati.html<br>
+  http://www.quirksmode.org/blog/archives/2012/07/more_about_devi.html<br>
+  </p>
+
+
+  <p>
+  <h2>CSS pretends</h2>
+  CSS does have cm, inches, points and picas, all physical world set units, but they never worked out. Next are three css only examples, on css inch, one css centimeter, and one css pixel.
+
+<div class="inch-tester"></div>
+<div class="cm-tester"></div>
+<div class="pixel-tester"></div>
+
+  </p>
+
+
 <h1 class="pagetitle">Actual Size Ruler</h1>
 
 <canvas id="ruler" width="680" height="130" style="border:1px solid #838383;">
@@ -62,22 +104,6 @@ var rulers= ["","A4 Paper (portrait)","A4 Paper (landscape)",
 "Standard CD Diameter"];
 var rulers_inch= [0,8.264,11.681,6.14,2.61,5.236,4.724];
 </script>
-<div id="divRight">
-
-
-<script type="text/javascript">
-var ww = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-if (ww>800){ AD_300_600(true,1);}
-</script>
-
-</div>
-
-<script type="text/javascript">
-if (ww>800){ AD_300_600(true,1);}
-</script>
-
-</div>
-<!-- end right-->
 
 <form>
 <p>
@@ -87,7 +113,6 @@ Graduation of an inch: <select id="fractions" onchange="drawruler();"><option va
 <div id="btnAdjust" style="display:none">
 Ruler Adjuster : <input type="button" value="Smaller" onclick="changeppi(-0.1);" class="btnAdjuster">
 <input type="button" value="Bigger" onclick="changeppi(0.1);" class="btnAdjuster">
-
 <script type="text/javascript">
 function refrest_btnAdjust(){
 var a=document.getElementById('adjuster');
@@ -109,16 +134,14 @@ drawAdjuster();
 <h2 id="h2_title">Handy Online Ruler</h2>
 <p id="h2_p">This is an online vitrual ruler that can be <em>adjusted to an actual size</em>,
 before you use it, please set the pixels per inch to your own device.
-This is useful to me and welcome to share it or use it.
 </p>
+
 
 <h3 id="h3_title">Adjusting this virtual ruler to actual size </h3>
 <div>There are some ways to know the pixels per inch(PPI) to your devie.</div>
 <ol>
 <li>My laptop has a wide screen (13.6"x7.6"),
 and resolution is 1366x768 pixels, 1366 / 13.6 = 100.44 PPI. </li>
-<li>Google <a target="_blank" href="https://www.google.com.tw/search?q=List+of+displays+by+pixel+density">display by pixel density</a>,
-i am lucky and find my screen is 100 PPI.</li>
 <li>Check what paper money in your wallet, and search "the width of paper money" online, then adjust the PPI by it. </li>
 <li>The most accurate way,
 after i measure the size of virtual ruler by a actual ruler,
@@ -153,9 +176,11 @@ after save the setting, refresh your brower to check the result.
 On the most popular browsers you can press the F5 key or click on the refresh button.
 </p>
 
-<script type="text/javascript">
-if (ww<=800){ Auto_AD();}
-</script>
+
+
+
+
+
 
 <script type="text/javascript">
 function gel(id){return document.getElementById(id);}
@@ -445,21 +470,4 @@ function restore(){
 }
 
 drawruler();
-</script>
-
-<p>
-<script type="text/javascript">
-AutoAD();
-</script>
-</p>
-
-<script type="text/javascript">
-var _gaq = _gaq || [];
-_gaq.push(['_setAccount', 'UA-2333732-1']);
-_gaq.push(['_trackPageview']);
-(function() {
- var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
- ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
- var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();
 </script>
