@@ -99,17 +99,17 @@ c.addEventListener("mousedown", handleMouseDown);
 c.addEventListener("mouseup", handleMouseUp);
 c.addEventListener("mouseout", handleMouseOut);
 c.addEventListener("mousemove", handleMouseMove);
-var rulers= ["","A4 Paper (portrait)","A4 Paper (landscape)",
-"US One Dollar Bill (long)","US One Dollar Bill (width)","20 EURO Note (long)",
-"Standard CD Diameter"];
-var rulers_inch= [0,8.264,11.681,6.14,2.61,5.236,4.724];
+var rulers= ["","A4 Paper (portrait)","A4 Paper (landscape)","20 EURO Note (long)"];
+var rulers_inch= [0,8.264,11.681,5.236];
 </script>
 
 <form>
 <p>
+<!--
 Graduation of an inch: <select id="fractions" onchange="drawruler();"><option value="8">1/8</option>
 <option value="16" selected="selected">1/16</option><option value="32">1/32</option></select> ",
 <input type="checkbox" id="mark18" value="1" onchange="drawruler();"><label for="mark18">show 1/8" markings</label>
+-->
 <div id="btnAdjust" style="display:none">
 Ruler Adjuster : <input type="button" value="Smaller" onclick="changeppi(-0.1);" class="btnAdjuster">
 <input type="button" value="Bigger" onclick="changeppi(0.1);" class="btnAdjuster">
@@ -131,26 +131,13 @@ drawAdjuster();
 </p>
 </form>
 
-<h2 id="h2_title">Handy Online Ruler</h2>
-<p id="h2_p">This is an online vitrual ruler that can be <em>adjusted to an actual size</em>,
-before you use it, please set the pixels per inch to your own device.
+<h2 id="h2_title">Real size onscreen Ruler</h2>
+<p id="h2_p">Adjustable (<b>draggable</b>) online vitrual ruler that can be <em>adjusted to an actual physical work size</em>.
 </p>
 
 
 <h3 id="h3_title">Adjusting this virtual ruler to actual size </h3>
-<div>There are some ways to know the pixels per inch(PPI) to your devie.</div>
-<ol>
-<li>My laptop has a wide screen (13.6"x7.6"),
-and resolution is 1366x768 pixels, 1366 / 13.6 = 100.44 PPI. </li>
-<li>Check what paper money in your wallet, and search "the width of paper money" online, then adjust the PPI by it. </li>
-<li>The most accurate way,
-after i measure the size of virtual ruler by a actual ruler,
-i found the markings are not very accurate at 30cm,
-so i adjust the default pixels per inch(PPI) to 100.7,
-now i get an online actual size ruler.
-</li>
-</ol>
-
+<p>Select an object out of the list that you can lay your hands on.</p>
 <form>
 <p>Save the pixels per inch (PPI) according your own device, then you can use this next time.
 <br><strong>Pixels per inch :</strong> <input id="ppi" type="text" size="5" value="100.7">

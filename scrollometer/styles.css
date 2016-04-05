@@ -11,10 +11,11 @@ div#mainbody{
 div#mainbody p{
   width: 60%;
 }
-
+/*
 canvas#ruler{
   margin-left: -10%;
 }
+*/
 
 h2{
   width: 60%;
