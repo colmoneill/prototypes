@@ -9,12 +9,10 @@ import datetime
 join = os.path.join
 
 # settings for user:
-# wikiusername =
-# wikipassword =
-# repo =
-repopath = '/home/colm/git/prototypes/'
-repo = Repo('/home/colm/git/prototypes/')
-remoteURL = 'git@github.com:colmoneill/prototypes.git'
+# wikiusername = your /mediadesign mw username
+# wikipassword = your pw
+# gitrepo = example: '/home/colm/git/prototypes' -> the location of your .git folder
+
 
 parser = argparse.ArgumentParser(description='Cross publish your texts to Mediawikis and git repos')
 parser.add_argument('-f', '--file', type=argparse.FileType('r'), help='your input text file', required=True)
@@ -34,13 +32,10 @@ page.save(output, 'version pushed from crosspublish.py')
 print 'Converted ' + input + ' to mediawiki syntax and published on ' + 'https://pzwiki.wdka.nl/mw-mediadesign/' 'User:' + wikiusername + '/'+ wikipagename
 
 #publish to a git repo
+repo = Repo(gitrepo)
 git = repo.git
-repo.config_reader()
-cw = repo.config_writer()
 index = repo.index
-git.pull
-git.add([input])
-print 'added input to git'
-index.commit("Crosspublish from script ").type == 'commit'
-print 'committed automatic commit message with datetime'
+gitinput = os.path.abspath(input)
+index.add([gitinput])
+index.commit("is this script working?")
 git.push()
