@@ -15,10 +15,10 @@ join = os.path.join
 # wikipassword = your pw
 
 parser = argparse.ArgumentParser(description='Cross publish your texts to Mediawikis and git repos')
-parser.add_argument('-f', '--file', type=argparse.FileType('r'), help='your input text file', required=True)
-parser.add_argument('-wp', '--wikipage', help='name of the wiki page to post to. If this page does not exist it will be created.', required=True)
-parser.add_argument('-m', '--message', help='your edit summary and commit message, use quotes for strings')
-parser.add_argument('ng', '--nogit', action='store_true', help='use this flag if youre not pushing to a git repo')
+parser.add_argument('-f', '--file', type=argparse.FileType('r'), help='Your input text file', required=True)
+parser.add_argument('-wp', '--wikipage', help='Name of the wiki page to post to. If this page does not exist it will be created. FYI, all of these pages get posted to your namespace on the mdwiki.', required=True)
+parser.add_argument('-m', '--message', help='Your edit summary and commit message, use quotes for strings. If not provided an automatic message is placed with a timestamp.')
+parser.add_argument('ng', '--nogit', action='store_true', help='Use this flag if youre not pushing to a git repository.')
 args = parser.parse_args()
 # publish to mediawiki
 input = args.file.name
