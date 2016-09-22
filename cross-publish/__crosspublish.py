@@ -6,7 +6,8 @@ import pypandoc
 import os
 from git import *
 import gitpath # pip install git+https://github.com/maxnoe/python-gitpath
-import datetime
+from datetime import datetime
+from time import gmtime, strftime
 join = os.path.join
 
 # settings for user:
@@ -21,29 +22,26 @@ args = parser.parse_args()
 # publish to mediawiki
 input = args.file.name
 output = pypandoc.convert_file(input, 'mediawiki')
-now = datetime.datetime.now
+now = datetime.now
 site = mwclient.Site('pzwiki.wdka.nl', '/mw-mediadesign/')
 site.force_login = True
 site.login(wikiusername, wikipassword)
 wikipagename = args.wikipage
 page = site.pages['User:' + wikiusername + '/'+ wikipagename]
-page.save(output, 'version pushed from crosspublish.py')
+timenow = datetime.now()
+now = strftime("%Y-%m-%d %H:%M:%S", gmtime())
+automatic_edit_summary = 'version pushed from crosspublish.py at ' + now
+print (automatic_edit_summary)
+page.save(output, automatic_edit_summary)
 print('Converted ' + input + ' to mediawiki syntax and published on ' + 'https://pzwiki.wdka.nl/mw-mediadesign/' 'User:' + wikiusername + '/'+ wikipagename)
 
 #publish to a git repo
-#print(os.path.abspath(input))
 gitrepo = gitpath.root()
-print('found git root based on input')
-#set the found path to the GitPython main Repo object
 repo = Repo(gitrepo)
-# use GitPython index functions for safe interactions
 index = repo.index
 gitinput = os.path.abspath(input)
-#print (gitinput)
-#add input file to git
 index.add([gitinput])
-#commit message
-index.commit("is this script working?")
+index.commit(automatic_edit_summary)
 git = repo.git
-#push
 git.push()
+print("Pushed " + input + "to " + gitrepo )
