@@ -19,6 +19,7 @@ parser.add_argument('-f', '--file', type=argparse.FileType('r'), help='Your inpu
 parser.add_argument('-wp', '--wikipage', help='Name of the wiki page to post to. If this page does not exist it will be created. FYI, all of these pages get posted to your namespace on the mdwiki.', required=True)
 parser.add_argument('-m', '--message', help='Your edit summary and commit message, use quotes for strings. If not provided an automatic message is placed with a timestamp.')
 parser.add_argument('-ng', '--nogit', action='store_true', help='Use this flag if youre not pushing to a git repository.')
+parser.add_argument('-i', '--index', action='store_true', help='Adds a link to the published page on your wiki index page.')
 args = parser.parse_args()
 # publish to mediawiki
 input = args.file.name
@@ -37,7 +38,14 @@ if args.message:
 else:
     page.save(output, automatic_edit_summary)
 print('Converted ' + input + ' to mediawiki syntax and published on ' + 'https://pzwiki.wdka.nl/mw-mediadesign/' 'User:' + wikiusername + '/'+ wikipagename)
-
+# adds a link to the just created or updated wiki page on the users index page
+index = args.index
+indexpage = site.pages['User:' + wikiusername]
+if index is False:
+    print('index flag not in use, continuing')
+else:
+    indexpage.save('\n' + '==' 'Last unsorted drafts' + '==' + '\n' + 'unsorted draft from crosspublish.py: ' + 'https://pzwiki.wdka.nl/mw-mediadesign/' 'User:' + wikiusername + '/'+ wikipagename , section='14')
+    print('Added link to published wiki page on ' + wikiusername + 's index page')
 #publish to a git repo
 nogit = args.nogit
 if nogit is True:
