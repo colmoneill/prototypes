@@ -1,3 +1,5 @@
+save [__crosspublish.py](__crosspublish.py) to your ~/bin
+
 ```
 colm@debian-co:~$ crosspublish.py -h
 usage: crosspublish.py [-h] -f FILE -wp WIKIPAGE [-m MESSAGE] [-ng] [-i]
