@@ -44,7 +44,7 @@ indexpage = site.pages['User:' + wikiusername]
 if index is False:
     print('index flag not in use, continuing')
 else:
-    indexpage.save('\n' + '==' 'Last unsorted drafts' + '==' + '\n' + 'unsorted draft from crosspublish.py: ' + 'https://pzwiki.wdka.nl/mw-mediadesign/' 'User:' + wikiusername + '/'+ wikipagename , section='14')
+    indexpage.save('\n' + '==' 'Last unsorted drafts' + '==' + '\n' + 'unsorted draft from crosspublish.py: ' + 'https://pzwiki.wdka.nl/mediadesign/' 'User:' + wikiusername + '/'+ wikipagename , section='14')
     print('Added link to published wiki page on ' + wikiusername + 's index page')
 #publish to a git repo
 nogit = args.nogit
