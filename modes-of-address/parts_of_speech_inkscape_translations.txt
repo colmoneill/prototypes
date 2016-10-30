@@ -1,0 +1,83 @@
+### POS tag list:
+###
+### CC	coordinating conjunction
+### CD	cardinal digit
+### DT	determiner
+### EX	existential there (like: "there is" ... think of it like "there exists")
+### FW	foreign word
+### IN	preposition/subordinating conjunction
+### JJ	adjective	'big'
+### JJR	adjective, comparative	'bigger'
+### JJS	adjective, superlative	'biggest'
+### LS	list marker	1)
+### MD	modal	could, will
+### NN	noun, singular 'desk'
+### NNS	noun plural	'desks'
+### NNP	proper noun, singular	'Harrison'
+### NNPS	proper noun, plural	'Americans'
+### PDT	predeterminer	'all the kids'
+### POS	possessive ending	parent's
+### PRP	personal pronoun	I, he, she
+### PRP$	possessive pronoun	my, his, hers
+### RB	adverb	very, silently,
+### RBR	adverb, comparative	better
+### RBS	adverb, superlative	best
+### RP	particle	give up
+### TO	to	go 'to' the store.
+### UH	interjection	errrrrrrrm
+### VB	verb, base form	take
+### VBD	verb, past tense	took
+### VBG	verb, gerund/present participle	taking
+### VBN	verb, past participle	taken
+### VBP	verb, sing. present, non-3d	take
+### VBZ	verb, 3rd person sing. present	takes
+### WDT	wh-determiner	which
+### WP	wh-pronoun	who, what
+### WP$	possessive wh-pronoun	whose
+### WRB	wh-abverb	where, when
+
+
+Counter({
+'NNP': 6714,
+'NN': 6588,
+':': 2713,
+'CC': 2105,
+'IN': 1549,
+'JJ': 1481,
+'NNS': 1289,
+'DT': 1178,
+')': 652,
+'(': 652,
+'VB': 648,
+'TO': 593,
+'.': 395,
+'VBN': 384,
+'VBZ': 337,
+'CD': 334,
+'VBD': 318,
+'RB': 296,
+'VBG': 290,
+',': 269,
+'VBP': 249,
+'POS': 100,
+'PRP': 83,
+'MD': 66,
+'WRB': 59,
+'JJR': 42,
+'NNPS': 33,
+'RP': 26,
+'PRP$': 25,
+'WDT': 22,
+"''": 21,
+'#': 21,
+'FW': 17,
+'JJS': 16,
+'RBR': 12,
+'PDT': 9,
+'$': 5,
+'EX': 4,
+'WP': 3,
+'UH': 3,
+'WP$': 2,
+'SYM': 1
+})
