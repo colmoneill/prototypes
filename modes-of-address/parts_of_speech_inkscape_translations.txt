@@ -38,30 +38,30 @@
 
 
 Counter({
-'NNP': 6714,
-'NN': 6588,
+'NNP': 6714, ### NNP	proper noun, singular	'Harrison'
+'NN': 6588, ### NNS	noun plural	'desks'
 ':': 2713,
-'CC': 2105,
-'IN': 1549,
-'JJ': 1481,
-'NNS': 1289,
-'DT': 1178,
+'CC': 2105, ### CC	coordinating conjunction
+'IN': 1549, ### IN	preposition/subordinating conjunction
+'JJ': 1481, ### JJ	adjective	'big'
+'NNS': 1289, ### NNS	noun plural	'desks'
+'DT': 1178, ### DT	determiner
 ')': 652,
 '(': 652,
-'VB': 648,
+'VB': 648, ### VB	verb, base form	take
 'TO': 593,
 '.': 395,
-'VBN': 384,
-'VBZ': 337,
-'CD': 334,
-'VBD': 318,
-'RB': 296,
-'VBG': 290,
+'VBN': 384, ### VBN	verb, past participle	taken
+'VBZ': 337, ### VBZ	verb, 3rd person sing. present	takes
+'CD': 334, ### CD	cardinal digit
+'VBD': 318, ### VBD	verb, past tense	took
+'RB': 296, ### RB	adverb	very, silently,
+'VBG': 290, ### VBG	verb, gerund/present participle	taking
 ',': 269,
-'VBP': 249,
-'POS': 100,
-'PRP': 83,
-'MD': 66,
+'VBP': 249, ### VBP	verb, sing. present, non-3d	take
+'POS': 100, ### POS	possessive ending	parent's
+'PRP': 83, ### PRP	personal pronoun	I, he, she
+'MD': 66, ### MD	modal	could, will
 'WRB': 59,
 'JJR': 42,
 'NNPS': 33,
