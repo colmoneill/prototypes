@@ -1,0 +1,149 @@
+<html>
+<head></head>
+<div >
+<h1>compare results from parts of speech tagging outputs</h1>
+<body style="font-family: mono">
+  <div style="width: 48%; margin-right: 1%; float: left;outline: 1px dotted black;">
+    <h2>tagged language from inkscape translation file</h2>
+    <ul>
+      <li>Counter({</li>
+      <li>'NNP': 6714, ### NNP	proper noun, singular	'Harrison'</li>
+      <li>'NN': 6588, ### NNS	noun plural	'desks'</li>
+      <li>':': 2713,</li>
+      <li>'CC': 2105, ### CC	coordinating conjunction</li>
+      <li>'IN': 1549, ### IN	preposition/subordinating conjunction</li>
+      <li>'JJ': 1481, ### JJ	adjective	'big'</li>
+      <li>'NNS': 1289, ### NNS	noun plural	'desks'</li>
+      <li>'DT': 1178, ### DT	determiner</li>
+      <li>')': 652,</li>
+      <li>'(': 652,</li>
+      <li><u>'VB': 648, ### VB	verb, base form	take</u></li>
+      <li>'TO': 593,</li>
+      <li>'.': 395,</li>
+      <li><u>'VBN': 384, ### VBN	verb, past participle	taken</u></li>
+      <li><u>'VBZ': 337, ### VBZ	verb, 3rd person sing. present  takes</u></li>
+      <li>'CD': 334, ### CD	cardinal digit</li>
+      <li><u>'VBD': 318, ### VBD	verb, past tense	took</u></li>
+      <li>'RB': 296, ### RB	adverb	very, silently,</li>
+      <li><u>'VBG': 290, ### VBG	verb, gerund/present participle	taking</u></li>
+      <li>',': 269,</li>
+      <li><u>'VBP': 249, ### VBP	verb, sing. present, non-3d	take</u></li>
+      <li>'POS': 100, ### POS	possessive ending	parent's</li>
+      <li>'PRP': 83, ### PRP	personal pronoun	I, he, she</li>
+      <li>'MD': 66, ### MD	modal	could, will</li>
+      <li>'WRB': 59,</li>
+      <li>'JJR': 42,</li>
+      <li>'NNPS': 33,</li>
+      <li>'RP': 26,</li>
+      <li>'PRP$': 25,</li>
+      <li>'WDT': 22,</li>
+      <li>"''": 21,</li>
+      <li>'#': 21,</li>
+      <li>'FW': 17,</li>
+      <li>'JJS': 16,</li>
+      <li>'RBR': 12,</li>
+      <li>'PDT': 9,</li>
+      <li>'$': 5,</li>
+      <li>'EX': 4,</li>
+      <li>'WP': 3,</li>
+      <li>'UH': 3,</li>
+      <li>'WP$': 2,</li>
+      <li>'SYM': 1</li>
+      <li>})</li>
+    </ul>
+  </div>
+  <div style="width: 48%; margin-right: 1%; float: left; outline: 1px dotted black;">
+    <h2>tagged language from vimtutor</h2>
+    <ul>
+      <li>Counter({</li>
+      <li>'NN': 1191, ### NNS	noun plural	'desks'</li>
+      <li>'DT': 692, ### DT	determiner</li>
+      <li>'.': 564,</li>
+      <li>'NNP': 564, ### NNP	proper noun, singular	'Harrison'</li>
+      <li>'IN': 462, ### IN	preposition/subordinating conjunction</li>
+      <li><u>'VB': 412, ### VB	verb, base form	take</u></li>
+      <li>':': 335,</li>
+      <li>'CD': 306, ### CD	cardinal digit</li>
+      <li>'JJ': 303, ### JJ	adjective	'big'</li>
+      <li>'TO': 281, ### TO	to	go 'to' the store.</li>
+      <li><u>'VBZ': 173, ### VBZ	verb, 3rd person sing. present	takes</u></li>
+      <li>'PRP': 139, ### PRP	personal pronoun	I, he, she</li>
+      <li>'RB': 136, ### RB	adverb	very, silently,</li>
+      <li>'NNS': 135, ### NNS	noun plural	'desks'</li>
+      <li>',': 113,</li>
+      <li>'CC': 111, ### CC	coordinating conjunction</li>
+      <li><u>'VBP': 83, ### VBP	verb, sing. present, non-3d	take</u></li>
+      <li><u>'VBG': 71, ### VBG	verb, gerund/present participle	taking</u></li>
+      <li><u>'VBN': 65, ### VBN	verb, past participle	taken</u></li>
+      <li>')': 63,</li>
+      <li>'MD': 49, ### MD	modal	could, will</li>
+      <li>'(': 48,</li>
+      <li><u>'VBD': 42, ### VBD	verb, past tense	took</u></li>
+      <li>'$': 36,</li>
+      <li>"''": 25,</li>
+      <li>'WRB': 25, ### WRB	wh-abverb	where, when</li>
+      <li>'POS': 22, ### POS	possessive ending	parent's</li>
+      <li>'``': 19,</li>
+      <li>'JJR': 16, ### JJR	adjective, comparative	'bigger'</li>
+      <li>'PRP$': 13, ### PRP$	possessive pronoun	my, his, hers</li>
+      <li>'WDT': 13,</li>
+      <li>'RP': 12,</li>
+      <li>'EX': 9,</li>
+      <li>'#': 7,</li>
+      <li>'WP': 6,</li>
+      <li>'PDT': 3,</li>
+      <li>'UH': 3,</li>
+      <li>'RBR': 2,</li>
+      <li>'JJS': 2,</li>
+      <li>'SYM': 2,</li>
+      <li>'FW': 1,</li>
+      <li>'RBS': 1</li>
+      <li>})</li>
+    </ul>
+  </div>
+  <div>
+    <h3>keys:</h3>
+    <pre>
+      ### POS tag list:
+      ###
+      ### CC	coordinating conjunction
+      ### CD	cardinal digit
+      ### DT	determiner
+      ### EX	existential there (like: "there is" ... think of it like "there exists")
+      ### FW	foreign word
+      ### IN	preposition/subordinating conjunction
+      ### JJ	adjective	'big'
+      ### JJR	adjective, comparative	'bigger'
+      ### JJS	adjective, superlative	'biggest'
+      ### LS	list marker	1)
+      ### MD	modal	could, will
+      ### NN	noun, singular 'desk'
+      ### NNS	noun plural	'desks'
+      ### NNP	proper noun, singular	'Harrison'
+      ### NNPS	proper noun, plural	'Americans'
+      ### PDT	predeterminer	'all the kids'
+      ### POS	possessive ending	parent's
+      ### PRP	personal pronoun	I, he, she
+      ### PRP$	possessive pronoun	my, his, hers
+      ### RB	adverb	very, silently,
+      ### RBR	adverb, comparative	better
+      ### RBS	adverb, superlative	best
+      ### RP	particle	give up
+      ### TO	to	go 'to' the store.
+      ### UH	interjection	errrrrrrrm
+      ### VB	verb, base form	take
+      ### VBD	verb, past tense	took
+      ### VBG	verb, gerund/present participle	taking
+      ### VBN	verb, past participle	taken
+      ### VBP	verb, sing. present, non-3d	take
+      ### VBZ	verb, 3rd person sing. present	takes
+      ### WDT	wh-determiner	which
+      ### WP	wh-pronoun	who, what
+      ### WP$	possessive wh-pronoun	whose
+      ### WRB	wh-abverb	where, when
+
+    </pre>
+  </div>
+  </div>
+</body>
+</html>
