@@ -20,6 +20,7 @@ parser.add_argument('-wp', '--wikipage', help='Name of the wiki page to post to.
 parser.add_argument('-m', '--message', help='Your edit summary and commit message, use quotes for strings. If not provided an automatic message is placed with a timestamp.')
 parser.add_argument('-ng', '--nogit', action='store_true', help='Use this flag if youre not pushing to a git repository.')
 parser.add_argument('-i', '--index', action='store_true', help='Adds a link to the published page on your wiki index page.')
+parser.add_argument('-html', '--make_html', action='store_true', help='Generates a html version of the file in the working directory.')
 args = parser.parse_args()
 # publish to mediawiki
 input = args.file.name
@@ -63,3 +64,12 @@ else:
         git = repo.git
         git.push()
     print("Pushed " + input + " to " + repo.remotes.origin.url )
+html = args.make_html
+if html is False:
+    print('no html version generated')
+else:
+    generated_html = pypandoc.convert_file(input, 'html5')
+    html_output = open(input + '.html', 'w')
+    html_output.write(generated_html)
+    html_output.close()
+    print('Wrote out html version to file: ' + input + '.html')
