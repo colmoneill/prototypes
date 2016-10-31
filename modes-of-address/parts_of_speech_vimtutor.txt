@@ -1,0 +1,83 @@
+### POS tag list:
+###
+### CC	coordinating conjunction
+### CD	cardinal digit
+### DT	determiner
+### EX	existential there (like: "there is" ... think of it like "there exists")
+### FW	foreign word
+### IN	preposition/subordinating conjunction
+### JJ	adjective	'big'
+### JJR	adjective, comparative	'bigger'
+### JJS	adjective, superlative	'biggest'
+### LS	list marker	1)
+### MD	modal	could, will
+### NN	noun, singular 'desk'
+### NNS	noun plural	'desks'
+### NNP	proper noun, singular	'Harrison'
+### NNPS	proper noun, plural	'Americans'
+### PDT	predeterminer	'all the kids'
+### POS	possessive ending	parent's
+### PRP	personal pronoun	I, he, she
+### PRP$	possessive pronoun	my, his, hers
+### RB	adverb	very, silently,
+### RBR	adverb, comparative	better
+### RBS	adverb, superlative	best
+### RP	particle	give up
+### TO	to	go 'to' the store.
+### UH	interjection	errrrrrrrm
+### VB	verb, base form	take
+### VBD	verb, past tense	took
+### VBG	verb, gerund/present participle	taking
+### VBN	verb, past participle	taken
+### VBP	verb, sing. present, non-3d	take
+### VBZ	verb, 3rd person sing. present	takes
+### WDT	wh-determiner	which
+### WP	wh-pronoun	who, what
+### WP$	possessive wh-pronoun	whose
+### WRB	wh-abverb	where, when
+
+
+Counter({
+'NN': 1191, ### NNS	noun plural	'desks'
+'DT': 692, ### DT	determiner
+'.': 564,
+'NNP': 564, ### NNP	proper noun, singular	'Harrison'
+'IN': 462, ### IN	preposition/subordinating conjunction
+'VB': 412, ### VB	verb, base form	take
+':': 335,
+'CD': 306, ### CD	cardinal digit
+'JJ': 303, ### JJ	adjective	'big'
+'TO': 281, ### TO	to	go 'to' the store.
+'VBZ': 173, ### VBZ	verb, 3rd person sing. present	takes
+'PRP': 139, ### PRP	personal pronoun	I, he, she
+'RB': 136, ### RB	adverb	very, silently,
+'NNS': 135, ### NNS	noun plural	'desks'
+',': 113,
+'CC': 111, ### CC	coordinating conjunction
+'VBP': 83, ### VBP	verb, sing. present, non-3d	take
+'VBG': 71, ### VBG	verb, gerund/present participle	taking
+'VBN': 65, ### VBN	verb, past participle	taken
+')': 63,
+'MD': 49, ### MD	modal	could, will
+'(': 48,
+'VBD': 42, ### VBD	verb, past tense	took
+'$': 36,
+"''": 25,
+'WRB': 25, ### WRB	wh-abverb	where, when
+'POS': 22, ### POS	possessive ending	parent's
+'``': 19,
+'JJR': 16, ### JJR	adjective, comparative	'bigger'
+'PRP$': 13, ### PRP$	possessive pronoun	my, his, hers
+'WDT': 13,
+'RP': 12,
+'EX': 9,
+'#': 7,
+'WP': 6,
+'PDT': 3,
+'UH': 3,
+'RBR': 2,
+'JJS': 2,
+'SYM': 2,
+'FW': 1,
+'RBS': 1
+})
