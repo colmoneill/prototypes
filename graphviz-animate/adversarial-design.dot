@@ -1,0 +1,11 @@
+digraph A {
+  a -> b
+  a [shape=box,label="Adversarial Design"]
+  b [label="rooted in Agonism & Agonistic Democracy"]
+  a -> c [style=dotted, label="as defined by"];
+  c [label="Carl DiSalvo"]
+  b -> d
+  b -> e
+  d [shape=box,style=dotted,fontsize=8,label="Agonism: political theory that emphasises\l the potentially positive aspects of certain\l (but not all) forms of political conflict.\l It accepts a permanent place for such conflict,\l but seeks to show how we might accept\l and channel this positively.\l"]
+  e [label="Agonisitc Democracy:"]
+}

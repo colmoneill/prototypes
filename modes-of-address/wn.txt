@@ -1,0 +1,50 @@
+
+Synonyms/Hypernyms (Ordered by Estimated Frequency) of noun interface
+
+4 senses of interface                                                   
+
+Sense 1
+interface
+       => surface
+           => boundary, bound, bounds
+               => extremity
+                   => region, part
+                       => location
+                           => object, physical object
+                               => physical entity
+                                   => entity
+
+Sense 2
+interface, user interface
+       => program, programme, computer program, computer programme
+           => software, software program, computer software, software system, software package, package
+               => code, computer code
+                   => coding system
+                       => writing
+                           => written communication, written language, black and white
+                               => communication
+                                   => abstraction, abstract entity
+                                       => entity
+
+Sense 3
+interface
+       => overlap, convergence, intersection
+           => representation, mental representation, internal representation
+               => content, cognitive content, mental object
+                   => cognition, knowledge, noesis
+                       => psychological feature
+                           => abstraction, abstract entity
+                               => entity
+
+Sense 4
+interface, port
+       => computer circuit
+           => circuit, electrical circuit, electric circuit
+               => electrical device
+                   => device
+                       => instrumentality, instrumentation
+                           => artifact, artefact
+                               => whole, unit
+                                   => object, physical object
+                                       => physical entity
+                                           => entity

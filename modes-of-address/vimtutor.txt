@@ -21,34 +21,11 @@
      Now, make sure that your Shift-Lock key is NOT depressed and press
      the   j   key enough times to move the cursor so that Lesson 1.1
      completely fills the screen.
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-			Lesson 1.1:  MOVING THE CURSOR
-
-
-   ** To move the cursor, press the h,j,k,l keys as indicated. **
-	     ^
-	     k		    Hint:  The h key is at the left and moves left.
-       < h	 l >		   The l key is at the right and moves right.
-	     j			   The j key looks like a down arrow.
-	     v
-  1. Move the cursor around the screen until you are comfortable.
-
-  2. Hold down the down key (j) until it repeats.
-     Now you know how to move to the next lesson.
-
-  3. Using the down key, move to Lesson 1.2.
-
-NOTE: If you are ever unsure about something you typed, press <ESC> to place
-      you in Normal mode.  Then retype the command you wanted.
-
-NOTE: The cursor keys should also work.  But using hjkl you will be able to
-      move around much faster, once you get used to it.  Really!
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-			    Lesson 1.2: EXITING VIM
-
-
-  !! NOTE: Before executing any of the steps below, read this entire lesson!!
+~~~~~~~~~~~~~~~~~~~[?1049h[?1h=[?12;25h[?12l[?25h[27m[23m[m[H[2J[?25l[1;1H===============================================================================
+=    W e l c o m e   t o   t h e   V I M   T u t o r    -    Version 1.7      =
+===============================================================================[5;6HVim is a very powerful editor that has many commands, too many to[6;6Hexplain in a tutor such as this.  This tutor is designed to describe[7;6Henough of the commands that you will be able to easily use Vim as[8;6Han all-purpose editor.[10;6HThe approximate time required to complete the tutor is 25-30 minutes,[11;6Hdepending upon how much time is spent with experimentation.[13;6HATTENTION:[14;6HThe commands in the lessons will modify the text.  Make a copy of this[15;6Hfile to practise on (if you started "vimtutor" this is already a copy).[1;1H[?12l[?25h[16;1H[?1l>[?1049lVim: Caught deadly signal HUP
+Vim: Finished.
+[16;1H!! NOTE: Before executing any of the steps below, read this entire lesson!!
 
   1. Press the <ESC> key (to make sure you are in Normal mode).
 
@@ -155,84 +132,23 @@ NOTE: As you go through this tutor, do not try to memorize, learn by usage.
   4. Save the file with changes and exit Vim with:  :wq  <ENTER>
 
   5. If you have quit vimtutor in step 1 restart the vimtutor and move down to
-     the following summary.
+     the following summary.[?1049h[?1h=[?12;25h[?12l[?25h[27m[23m[m[H[2J[?25l[1;1H===============================================================================
+=    W e l c o m e   t o   t h e   V I M   T u t o r    -    Version 1.7      =
+===============================================================================[5;6HVim is a very powerful editor that has many commands, too many to[6;6Hexplain in a tutor such as this.  This tutor is designed to describe[7;6Henough of the commands that you will be able to easily use Vim as[8;6Han all-purpose editor.[10;6HThe approximate time required to complete the tutor is 25-30 minutes,[11;6Hdepending upon how much time is spent with experimentation.[13;6HATTENTION:[14;6HThe commands in the lessons will modify the text.  Make a copy of this[15;6Hfile to practise on (if you started "vimtutor" this is already a copy).[17;6HIt is important to remember that this tutor is set up to teach by[18;6Huse.  That means that you need to execute the commands to learn them[19;6Hproperly.  If you only read the text, you will forget the commands![21;6HNow, make sure that your Shift-Lock key is NOT depressed and press[22;6Hthe   j   key enough times to move the cursor so that Lesson 1.1[23;6Hcompletely fills the screen.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[25;25HLesson 1.1:  MOVING THE CURSOR[28;4H** To move the cursor, press the h,j,k,l keys as indicated. **[29;14H^[30;14Hk[14CHint:  The h key is at the left and moves left.[31;8H< h[7Cl >[15CThe l key is at the right and moves right.[32;14Hj[21CThe j key looks like a down arrow.[33;14Hv
+  1. Move the cursor around the screen until you are comfortable.
 
-  6. After reading the above steps and understanding them: do it.
-  
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-			       Lesson 1 SUMMARY
+  2. Hold down the down key (j) until it repeats.[37;6HNow you know how to move to the next lesson.
 
+  3. Using the down key, move to Lesson 1.2.
 
-  1. The cursor is moved using either the arrow keys or the hjkl keys.
-	 h (left)	j (down)       k (up)	    l (right)
+NOTE: If you are ever unsure about something you typed, press <ESC> to place[42;7Hyou in Normal mode.  Then retype the command you wanted.
 
-  2. To start Vim from the shell prompt type:  vim FILENAME <ENTER>
+NOTE: The cursor keys should also work.  But using hjkl you will be able to[45;7Hmove around much faster, once you get used to it.  Really!
 
-  3. To exit Vim type:	   <ESC>   :q!	 <ENTER>  to trash all changes.
-	     OR type:	   <ESC>   :wq	 <ENTER>  to save the changes.
-
-  4. To delete the character at the cursor type:  x
-
-  5. To insert or append text type:
-	 i   type inserted text   <ESC>		insert before the cursor
-	 A   type appended text   <ESC>         append after the line
-
-NOTE: Pressing <ESC> will place you in Normal mode or will cancel
-      an unwanted and partially completed command.
-
-Now continue with Lesson 2.
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-			Lesson 2.1: DELETION COMMANDS
-
-
-		       ** Type  dw  to delete a word. **
-
-  1. Press  <ESC>  to make sure you are in Normal mode.
-
-  2. Move the cursor to the line below marked --->.
-
-  3. Move the cursor to the beginning of a word that needs to be deleted.
-
-  4. Type   dw	 to make the word disappear.
-
-  NOTE: The letter  d  will appear on the last line of the screen as you type
-	it.  Vim is waiting for you to type  w .  If you see another character
-	than  d  you typed something wrong; press  <ESC>  and start over.
-
----> There are a some words fun that don't belong paper in this sentence.
-
-  5. Repeat steps 3 and 4 until the sentence is correct and go to Lesson 2.2.
-
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-		      Lesson 2.2: MORE DELETION COMMANDS
-
-
-	   ** Type  d$	to delete to the end of the line. **
-
-  1. Press  <ESC>  to make sure you are in Normal mode.
-
-  2. Move the cursor to the line below marked --->.
-
-  3. Move the cursor to the end of the correct line (AFTER the first . ).
-
-  4. Type    d$    to delete to the end of the line.
-
----> Somebody typed the end of this line twice. end of this line twice.
-
-
-  5. Move on to Lesson 2.3 to understand what is happening.
-
-
-
-
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-		     Lesson 2.3: ON OPERATORS AND MOTIONS
-
-
-  Many commands that change text are made from an operator and a motion.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[1;1H[?12l[?25h[48;1H[?1l>[?1049lVim: Caught deadly signal HUP
+Vim: Finished.
+[48;1H text are made from an operator and a motion.
   The format for a delete command with the  d  delete operator is as follows:
 
   	d   motion

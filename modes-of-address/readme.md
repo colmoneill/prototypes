@@ -24,3 +24,14 @@ I took the language translation files from Inkscape, (type of file that lets a s
 To make sense of this list, I had to see what the function would do on a different type of text, one that I knew had a different mode of address, but also in the realm of using a tool; I used the vimtutor text second. Much more of a tutorial attitude, different type of program.
 
 I list the results in [compare_results.html](compare_results.html)
+
+### interpreting the results
+
+## next steps
+
+There are many other points I wish to research the topic of
+
+
+
+Visual ethnography, code ethnography, presentation ethnography, how they present themselves to the world, how they are when you open them.
+Text editors.

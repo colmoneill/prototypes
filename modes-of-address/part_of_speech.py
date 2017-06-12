@@ -51,7 +51,7 @@ content = file.read()
 match = re.findall(r"msgstr\s\"([^\"\\]*)\"", content)
 match = " ".join(match)
 match = match.decode('utf8')
-#print match
+print match
 #print(sent_tokenize(match))
 
 train_text = state_union.raw("2005-GWBush.txt")
@@ -61,19 +61,19 @@ custom_sent_tokenizer = PunktSentenceTokenizer(train_text)
 
 tokenized = custom_sent_tokenizer.tokenize(match)
 
-def process_content():
-    try:
-        for i in tokenized:
-            words = nltk.word_tokenize(i)
-            tagged = nltk.pos_tag(words)
-            print(tagged)
-
-    except Exception as e:
-        print (str(e))
+# def process_content():
+    # try:
+        # for i in tokenized:
+            # words = nltk.word_tokenize(i)
+            # tagged = nltk.pos_tag(words)
+            # print(tagged)
+# 
+    # except Exception as e:
+        # print (str(e))
 
 processed_content = process_content()
 
-print(processed_content)
+#print(processed_content)
 
 ## option 2
 #content = content.decode('utf8')

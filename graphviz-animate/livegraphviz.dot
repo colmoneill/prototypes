@@ -1,0 +1,7 @@
+digraph A {
+  a -> b
+  a [shape=box,label="Adversarial Design"]
+  b [label="roots in agonism & agonistic democracy"]
+  a -> c [style=dotted];
+  c [label="Carl DiSalvo"]
+}
