@@ -21,6 +21,7 @@ with open(input) as myfile:
     changetitle[0] = changetitle[0] + ': '
     changetitle[1] = 'slides' + changetitle[1]
     head[0] = ''.join(changetitle)
+    head[3] = 'Status: published\n'
     print head
     head = ''.join(head).encode('utf-8')
     #print head
